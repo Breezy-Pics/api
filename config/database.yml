@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: breezy_pics
+  pool: 5
+  username: phyllisW
+  password: test123
