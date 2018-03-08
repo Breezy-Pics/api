@@ -17,6 +17,9 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
 
+    # add the currently logged in user to the new photo
+    @photo.user = current_user
+
     if @photo.save
       render json: @photo, status: :created, location: @photo
     else
@@ -46,6 +49,6 @@ class PhotosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def photo_params
-      params.fetch(:photo, {})
+      params.permit(:name, :caption)
     end
 end
