@@ -5,3 +5,11 @@ development:
   pool: 5
   username: phyllisW
   password: test123
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: breezy_pics_test
+  pool: 5
+  username: phyllisW
+  password: test123
