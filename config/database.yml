@@ -3,5 +3,9 @@ development:
   encoding: unicode
   database: breezy_pics_db
   pool: 5
-  username: breezy_pics
-  password: pass
+  username: ericksanc
+  password:
+
+# add breezy_pics user to your postgress database
+ # username: breezy_pics
+ # password: pass

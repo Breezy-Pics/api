@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306035707) do
+ActiveRecord::Schema.define(version: 20180306160223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,12 +29,15 @@ ActiveRecord::Schema.define(version: 20180306035707) do
     t.string "name"
     t.string "username"
     t.string "email"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password"
+    t.bigint "photos_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["photos_id"], name: "index_users_on_photos_id"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "photos", "users"
+  add_foreign_key "users", "photos", column: "photos_id"
 end
