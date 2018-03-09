@@ -2,11 +2,8 @@ class User < ApplicationRecord
   has_many :photos
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
-  # 1. Hash password before saving a User
   before_save :encrypt_password
-  # 2. Generate a token for authentication before creating a User
   before_create :generate_token
-  # 3. Adds a virtual password field, which we will use when creating a user
   attribute :password, :string
 
   def self.authenticate(email, password)
