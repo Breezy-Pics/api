@@ -1,4 +1,6 @@
 class Photo < ApplicationRecord
   belongs_to :user
-  validates :name, :date, :caption, presence: true
+  validates :name, presence: true
+  validates :caption, presence: true
+  validates :user, presence: true
 end

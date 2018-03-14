@@ -22,6 +22,7 @@ class ApplicationController < ActionController::API
   end
 
   private
+
   # 6. Authenticate a user with by token
   def authorize_request
     authenticate_with_http_token do |token, options|
