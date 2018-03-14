@@ -5,21 +5,6 @@ class UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
-
-    pretty_printed = "[\n"
-
-    @users.each do |a_user|
-      pretty_printed += "{\n"
-      name = a_user.name
-      username = a_user.username
-      email = a_user.email
-
-      pretty_printed += "#{name}\n#{username}\n#{email}\n"
-      pretty_printed += "},\n"
-    end
-
-    pretty_printed += "]"
-
     render json: @users
   end
 

@@ -18,6 +18,7 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
 
     # add the currently logged in user to the new photo
+
     @photo.user = current_user
 
     if @photo.save
@@ -49,6 +50,7 @@ class PhotosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def photo_params
-      params.permit(:name, :caption)
+
+      params.permit(:name, :user_id, :caption)
     end
 end
